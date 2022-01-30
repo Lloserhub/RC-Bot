@@ -29,18 +29,6 @@ func main() {
 
 			switch text {
 
-			case command:
-				when /start/i
-				  reply.text = "All I can do is say hello. Try the /greet command."
-				when /greet/i
-				  reply.text = "Hello, #{message.from.first_name}. 🤖"
-				else
-				  reply.text = "I have no idea what #{command.inspect} means."
-				end
-				puts "sending #{reply.text.inspect} to @#{message.from.username}"
-				reply.send_with(bot)
-			end
-
 			case "/start":
 				msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Привет, "+update.SentFrom().FirstName+
 					". Ты написал нашему боту, который может помочь тебе справиться с буллингом"+
